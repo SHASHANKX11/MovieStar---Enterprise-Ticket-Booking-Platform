@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "mtxr.sqltools",
+    "mtxr.sqltools-driver-pg",
+    "mtxr.sqltools-driver-mysql",
+    "cweijan.vscode-database-client2"
+  ]
+}

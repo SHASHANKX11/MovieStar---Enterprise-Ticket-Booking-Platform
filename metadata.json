@@ -1,0 +1,6 @@
+{
+  "name": "Enterprise Java Booking Architecture",
+  "description": "Architectural documentation and code samples for a production-grade Java/Servlets BookMyShow clone.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(10, 10, 15, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f43f5e, #7c3aed);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #e11d48, #6d28d9);
+}
+
+/* ── Keyframe Animations ── */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 4px 0 rgba(244, 63, 94, 0.4); }
+  50% { box-shadow: 0 0 16px 6px rgba(244, 63, 94, 0.2); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-scale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Utility Classes ── */
+.animate-shimmer {
+  background: linear-gradient(90deg, #181824 25%, #242435 50%, #181824 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease forwards;
+}
+
+.animate-fade-scale {
+  animation: fade-in-scale 0.3s ease forwards;
+}
+
+.ticker-inner {
+  display: flex;
+  animation: ticker 30s linear infinite;
+  width: max-content;
+}
+
+.ticker-inner:hover {
+  animation-play-state: paused;
+}
+
+/* ── Glassmorphism ── */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-dark {
+  background: rgba(10, 10, 16, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Seat Tier Colors (Cinema Dark Edition) ── */
+.seat-vip {
+  border-color: rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.06);
+  color: #f59e0b;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.05);
+}
+.seat-vip:hover:not(:disabled) {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: #f59e0b;
+  color: #fbbf24;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+.seat-vip.selected {
+  background: #f59e0b;
+  border-color: #fbbf24;
+  color: #000;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
+  text-shadow: none;
+}
+
+.seat-gold {
+  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.06);
+  color: #a78bfa;
+  box-shadow: 0 0 6px rgba(139, 92, 246, 0.05);
+}
+.seat-gold:hover:not(:disabled) {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: #a78bfa;
+  color: #c084fc;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+}
+.seat-gold.selected {
+  background: #8b5cf6;
+  border-color: #c084fc;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
+}
+
+.seat-silver {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.06);
+  color: #34d399;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.05);
+}
+.seat-silver:hover:not(:disabled) {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: #34d399;
+  color: #6ee7b7;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+.seat-silver.selected {
+  background: #10b981;
+  border-color: #6ee7b7;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+}
+
+/* ── Hero gradient overlay ── */
+.hero-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(9, 9, 12, 0.98) 0%,
+    rgba(9, 9, 12, 0.88) 40%,
+    rgba(9, 9, 12, 0.4) 75%,
+    rgba(9, 9, 12, 0.1) 100%
+  );
+}
+
+/* ── Language badge colors (Cinema Dark Edition) ── */
+.lang-hindi    { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border-color: rgba(245, 158, 11, 0.2); }
+.lang-english  { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border-color: rgba(59, 130, 246, 0.2); }
+.lang-tamil    { background: rgba(236, 72, 153, 0.1); color: #f472b6; border-color: rgba(236, 72, 153, 0.2); }
+.lang-telugu   { background: rgba(16, 185, 129, 0.1); color: #34d399; border-color: rgba(16, 185, 129, 0.2); }
+.lang-kannada  { background: rgba(139, 92, 246, 0.1); color: #a78bfa; border-color: rgba(139, 92, 246, 0.2); }
+.lang-malayalam { background: rgba(249, 115, 22, 0.1); color: #fb923c; border-color: rgba(249, 115, 22, 0.2); }
+
+/* Custom text glows */
+.text-glow-rose {
+  text-shadow: 0 0 10px rgba(244, 63, 94, 0.6);
+}
+.text-glow-violet {
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
+}
+.text-glow-blue {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+}
+.shadow-rose-glow {
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.25);
+}
+
